@@ -2,6 +2,7 @@ package moe.dituon.petpet.bot.qq.handler;
 
 import moe.dituon.petpet.bot.qq.avatar.QQAvatarRequester;
 
+//TODO 注释工作
 public interface QQMessageElement {
     enum MessageType {
         TEXT,
