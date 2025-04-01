@@ -104,6 +104,7 @@ allprojects {
     repositories {
         maven { setUrl("https://maven.aliyun.com/repository/public") }
         maven { setUrl("https://jitpack.io") }
+        maven("https://s01.oss.sonatype.org/content/repositories/snapshots")
         mavenCentral()
     }
 }
