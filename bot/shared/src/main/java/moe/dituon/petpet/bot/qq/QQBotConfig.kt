@@ -54,6 +54,37 @@ enum class ReplyType {
     URL, // TODO
 }
 
+/**
+ * QQBot配置类，用于序列化和反序列化配置信息
+ *
+ * @param command 用于触发机器人的命令前缀，默认为"pet"
+ * @param commandHead 命令的头部，用于特定的命令识别，默认为空字符串
+ * @param respondSelfNudge 是否响应自身的戳一戳事件，默认为false
+ * @param respondFriend 是否响应好友消息，默认为true
+ * @param respondGroup 是否响应群消息，默认为true
+ * @param defaultFontFamily 默认的字体家族，默认使用FontManager中的默认字体
+ *
+ * @param defaultReplyType 默认的回复类型，使用ReplyType枚举，默认为TEMPLATE
+ * @param defaultTemplate 默认的模板字符串，用于回复消息时的模板，默认为null
+ * @param commandPermissionName 命令与权限名称的映射，用于管理不同命令的权限，默认为预设的命令权限名称
+ * @param timeUnitName 时间单位的名称映射，用于解析时间相关的命令参数，默认为预设的时间单位名称
+ * @param commandOperationName 命令与操作名称的映射，用于解析命令参数中的操作，默认为预设的命令操作名称
+ *
+ * @param defaultGroupCommandPermission 默认的群命令权限，默认为"all"，即所有命令都可以在群中使用
+ * @param defaultGroupEditPermission 默认的群编辑权限，默认为预设的编辑权限
+ * @param nudgeProbability 戳一戳事件的响应概率，默认为QQBotService中的默认概率
+ * @param disabledGroups 禁用机器人的群ID集合，默认为空集合
+ * @param disabledTemplates 禁用的模板集合，默认为空集合
+ * @param imageCachePoolSize 图像缓存池大小，默认为2048
+ * @param groupCooldownTime 群冷却时间，默认为Colder中的默认群冷却时间
+ * @param userCooldownTime 用户冷却时间，默认为Colder中的默认用户冷却时间
+ * @param inCoolDownMessage 在冷却时间内的默认回复消息，默认为Colder中的默认消息
+ *
+ * @param autoUpdate 是否自动更新，默认为true
+ * @param repositoryUrls 仓库URL列表，用于自动更新时获取资源，默认为空列表
+ * @param headless 是否为无头模式，即不显示图形界面，默认为true
+ * @param gifQuality GIF质量，影响生成的GIF图像的质量和大小，默认为10
+ */
 @Serializable
 data class QQBotConfig(
     val command: String = "pet",
@@ -108,3 +139,4 @@ data class QQBotConfig(
 ): BaseRenderConfig(
     gifQuality = gifQuality,
 )
+
