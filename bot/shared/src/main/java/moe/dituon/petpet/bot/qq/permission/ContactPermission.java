@@ -252,6 +252,7 @@ public static final Map<String, Integer> COMMAND_PERMISSION_NAME_MAP = Map.of(
         return disabledTemplateIds;
     }
 
+
     /**
      * 将命令权限转换为字符串表示形式
      * 此方法基于当前对象的命令权限属性，使用预定义的映射将权限值转换为对应的字符串
